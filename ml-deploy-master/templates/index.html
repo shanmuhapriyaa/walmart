@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+<style>
+body {
+  background-image: url('https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1209106512%2F0x0.jpg%3FcropX1%3D0%26cropX2%3D3264%26cropY1%3D38%26cropY2%3D1874');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<body>
+  <div class="login">
+    <center>
+    <h1>Prediction of Sales</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Store" placeholder="Store" required="required" /><br>
+      <input type="text" name="Department" placeholder="Department" required="required" /><br>
+      <input type="text" name="Is it a holiday" placeholder="IsHoliday" required="required" /><br>
+      <input type="text" name="Size" placeholder="size" /><br>
+      <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+      <input type="text" name="MarkDown1" placeholder="MarkDown1" required="required" /><br>
+      <input type="text" name="MarkDown2" placeholder="MarkDown2" required="required" /><br>
+      <input type="text" name="MarkDown4" placeholder="MarkDown4" required="required" /><br>
+      <input type="text" name="MarkDown5" placeholder="MarkDown5" required="required" /><br>
+      <input type="text" name="Type_A" placeholder="Type_A" required="required" /><br>
+      <input type="text" name="Type_B" placeholder="Type_B" required="required" /><br>
+      <input type="text" name="Type_C" placeholder="Type_C" required="required" /><br>
+      <input type="text" name="Month" placeholder="Month" required="required" /><br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+</center>
+    <br>
+    <br>
+    {{ prediction_text }}
+
+  </div>
+
+
+</body>
+
+</html>
